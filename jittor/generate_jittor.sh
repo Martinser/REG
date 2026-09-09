@@ -1,0 +1,16 @@
+mpirun -np 8 python generate_jittor.py \
+  --model SiT-XL/2 \
+  --num-fid-samples 50000 \
+  --ckpt /yourpath/4000000_jt.pkl \
+  --vae-ckpt /models/sd_vae_ema_jt.pkl \
+  --path-type linear \
+  --encoder-depth 8 \
+  --projector-embed-dims 768 \
+  --per-proc-batch-size 1 \
+  --mode sde \
+  --num-steps 250 \
+  --cfg-scale 2.3 \
+  --cls-cfg-scale 2.3 \
+  --guidance-high 0.85 \
+  --sample-dir /yourpath \
+  --cls 768
